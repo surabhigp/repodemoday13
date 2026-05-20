@@ -1,20 +1,32 @@
 {
 	"name": "pipeline1",
 	"properties": {
-		"parameters": {
-			"username": {
-				"type": "string",
-				"defaultValue": "@ LS_AzureKeyVault.sql-username"
-			},
-			"servernane": {
-				"type": "string",
-				"defaultValue": "@ LS_AzureKeyVault.sql-server-nmae"
-			},
-			"dbname": {
-				"type": "string",
-				"defaultValue": "@ LS_AzureKeyVault.sql-database-name"
+		"activities": [
+			{
+				"name": "GetUsername",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": {
+						"value": "https://KV-day13.vault.azure.net/secrets/sql-username?api-version=7.0",
+						"type": "Expression"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.net"
+					}
+				}
 			}
-		},
+		],
 		"annotations": []
 	}
 }
