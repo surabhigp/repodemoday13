@@ -1,8 +1,8 @@
 {
 	"name": "LS_AzureSQL_Retail",
 	"properties": {
-		"annotations": [],
 		"type": "AzureSqlDatabase",
+		"annotations": [],
 		"typeProperties": {
 			"server": {
 				"type": "AzureKeyVaultSecret",
