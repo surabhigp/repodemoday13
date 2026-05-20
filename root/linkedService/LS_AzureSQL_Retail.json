@@ -4,6 +4,12 @@
 		"parameters": {
 			"username": {
 				"type": "string"
+			},
+			"servername": {
+				"type": "string"
+			},
+			"dbname": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
