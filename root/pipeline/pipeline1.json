@@ -4,7 +4,15 @@
 		"parameters": {
 			"username": {
 				"type": "string",
-				"defaultValue": "@linkedService().sql-username"
+				"defaultValue": "@ LS_AzureKeyVault.sql-username"
+			},
+			"servernane": {
+				"type": "string",
+				"defaultValue": "@ LS_AzureKeyVault.sql-server-nmae"
+			},
+			"dbname": {
+				"type": "string",
+				"defaultValue": "@ LS_AzureKeyVault.sql-database-name"
 			}
 		},
 		"annotations": []
