@@ -1,26 +1,15 @@
 {
 	"name": "LS_AzureSQL_Retail",
 	"properties": {
-		"parameters": {
-			"username": {
-				"type": "string"
-			},
-			"servername": {
-				"type": "string"
-			},
-			"dbname": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "@{linkedService().servername}",
-			"database": "@{linkedService().dbname}",
+			"server": "sqlserverday13.database.windows.net",
+			"database": "sqlDBday13",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
-			"userName": "@{linkedService().username}",
+			"userName": "userName",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
@@ -30,5 +19,13 @@
 				"secretName": "sql-password"
 			}
 		}
+	},
+	"userName": {
+		"type": "AzureKeyVaultSecret",
+		"store": {
+			"referenceName": "LS_AzureKeyVault",
+			"type": "LinkedServiceReference"
+		},
+		"secretName": "sql-username"
 	}
 }
