@@ -1,0 +1,12 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"parameters": {
+			"username": {
+				"type": "string",
+				"defaultValue": "@linkedService().sql-username"
+			}
+		},
+		"annotations": []
+	}
+}
