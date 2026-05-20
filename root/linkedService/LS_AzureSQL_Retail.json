@@ -15,8 +15,8 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "sqlserverday13.database.windows.net",
-			"database": "sqlDBday13",
+			"server": "@{linkedService().servername}",
+			"database": "@{linkedService().dbname}",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
