@@ -10,7 +10,7 @@
 					"referenceName": "LS_AzureKeyVault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "sql-server-name"
+				"secretName": "sql-server-nmae"
 			},
 			"database": {
 				"type": "AzureKeyVaultSecret",
